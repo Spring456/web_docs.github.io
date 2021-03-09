@@ -1,5 +1,5 @@
 - JavaScript
-  - [闭包](closure.md)
+  - [事件循环机制](closure.md)
   - [原型](prototype.md)
 
 - CSS
