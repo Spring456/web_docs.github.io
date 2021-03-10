@@ -1,12 +1,11 @@
 - JavaScript
+  - [深浅拷贝]
   - [事件循环机制](closure.md)
   - [原型](prototype.md)
   - [闭包]
-  - [null和undefined的区别是什么]
   - [new操作符的作用是什么]
   - [this，call，apply，bind]
-  - [说说this对象的理解]
-  - [将类（伪）数组转换为标准数组]
+  - [说说对this的理解]
   - [前端跨域问题解决]
   - [promise和实现promise]
   - [XSS，CSRF攻击过程，前端怎么去防止这类攻击]
