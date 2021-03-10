@@ -31,5 +31,6 @@ JavaScript的单线程，与它的用途有关。作为浏览器脚本语言，J
 + 微任务(mincro-task)：promise.then、promise.nextTick(node)
 ### EventLoop 事件循环
 主线程从"任务队列"中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为Event Loop（事件循环）。
-https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e14aff1f40684c48b93ea48cdb4661f4~tplv-k3u1fbpfcp-zoom-1.image
+![alt 事件循环图](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e14aff1f40684c48b93ea48cdb4661f4~tplv-k3u1fbpfcp-zoom-1.image)
+
 
