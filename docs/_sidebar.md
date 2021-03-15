@@ -4,7 +4,7 @@
   - [原型和原型链](prototype.md)
   - [闭包]
   - [new操作符的作用是什么]
-  - [this，call，apply，bind]
+  - [this，call，apply，bind](thiscall.md)
   - [说说对this的理解]
   - [前端跨域问题解决]
   - [promise和实现promise]
