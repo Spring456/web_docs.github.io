@@ -47,6 +47,57 @@ a.age = 20;
 
 ## 深浅拷贝的实现方式
 
+
+
+### Object.assign()
+Object.assign() 方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。但是 Object.assign() 进行的是浅拷贝，拷贝的是对象的属性的引用，而不是对象本身。
+对对象的拷贝，只是第一层进行拷贝，对其他层不进行拷贝，所以是浅拷贝。
+
+```
+var obj = { a: {a: "hello", b: 21} };
+var initalObj = Object.assign({}, obj);
+initalObj.a.a = "changed";
+console.log(obj.a.a); // "changed"
+```
+### concat()方法
+该方法可以连接两个或者更多的数组，但是它不会修改已存在的数组，而是返回一个新数组。
+
+```
+const originArray = [1,2,3,4,5];
+const cloneArray = originArray.concat();
+console.log(cloneArray === originArray); // false
+cloneArray.push(6); // [1,2,3,4,5,6]
+console.log(originArray); [1,2,3,4,5];
+```
+看上去是深拷贝的。
+我们来考虑一个问题，如果这个对象是多层的，会怎样。
+```
+const originArray = [1,[1,2,3],{a:1}];
+const cloneArray = originArray.concat();
+console.log(cloneArray === originArray); // false
+cloneArray[1].push(4);
+cloneArray[2].a = 2; 
+console.log(originArray); // [1,[1,2,3,4],{a:2}]
+```
+originArray 中含有数组 [1,2,3] 和对象 {a:1}，如果我们直接修改数组和对象，不会影响 originArray，但是我们修改数组 [1,2,3] 或对象 {a:1} 时，发现 originArray 也发生了变化。
+结论：concat 只是对数组的第一层进行深拷贝。
+
+类似的还有数组的slice(0)方法
+### ... 展开运算符
+```
+const originArray = [1,2,3,4,5,[6,7,8]];
+const originObj = {a:1,b:{bb:1}};
+const cloneArray = [...originArray];
+cloneArray[0] = 0;
+cloneArray[5].push(9);
+console.log(originArray); // [1,2,3,4,5,[6,7,8,9]]
+const cloneObj = {...originObj};
+cloneObj.a = 2;
+cloneObj.b.bb = 2;
+console.log(originObj); // {a:1,b:{bb:2}}
+```
+结论：... 实现的是对象第一层的深拷贝。后面的只是拷贝的引用值。
+## 深拷贝
 ### 1.JSON.parse(JSON.stringify())
 
 用JSON.stringify将对象转成JSON字符串，再用JSON.parse()把字符串解析成对象，一去一来，新的对象产生了，而且对象会开辟新的栈，实现深拷贝。
@@ -105,11 +156,6 @@ console.log(obj2); // {name: "A"}
 ```
 3、new Date，转换结果不正确
 4、正则会被忽略
-### Object.assign()
-Object.assign()方法可以把任意多个的源对象自身的可枚举属性拷贝给目标对象，然后返回目标对象。但是 Object.assign() 进行的是浅拷贝，拷贝的是对象的属性的引用，而不是对象本身。当数据只有一层的时候，是深拷贝。
-
-类似的还有slice(0),concat,都是浅拷贝，当数据只有一层的时候，就可以实现深拷贝效果。
-
 ### 递归函数
 
 ```
@@ -132,7 +178,32 @@ function deepClone(obj){
 }    
 
 ```
-
+### 使用Object.create()方法
+直接使用var newObj = Object.create(oldObj)，可以达到深拷贝的效果。
+```
+/* ================ 深拷贝 ================ */
+function deepClone(initalObj, finalObj) {
+    var obj = finalObj || {};
+    for (var i in initalObj) {
+        var prop = initalObj[i];
+        // 避免相互引用对象导致死循环，如initalObj.a = initalObj的情况
+        if(prop === obj) {
+            continue;
+        }
+        if (typeof prop === 'object') {
+            obj[i] = (prop.constructor === Array) ? [] : Object.create(prop);
+        } else {
+            obj[i] = prop;
+        }
+    }
+    return obj;
+}
+```
+总结
+赋值运算符 = 实现的是浅拷贝，只拷贝对象的引用值；
+JavaScript 中数组和对象自带的拷贝方法都是“首层浅拷贝”；
+JSON.stringify 实现的是深拷贝，但是对目标对象有要求；
+若想真正意义上的深拷贝，请递归。
 ### lodash.js实现深拷贝
 
-文章摘自:https://juejin.cn/post/6906369563793817607
+文章部分内容摘自:https://juejin.cn/post/6906369563793817607
