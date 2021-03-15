@@ -11,6 +11,7 @@
   - [XSS，CSRF攻击过程，前端怎么去防止这类攻击]
   - [前端的性能优化方法](optimize.md)
   - [浏览器缓存机制]
+  - [js的垃圾回收机制和内存泄漏操作](collection.md)
 
 - VUE
   - [vue相关问题总结](vueProble.md)
