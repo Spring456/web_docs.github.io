@@ -2,7 +2,7 @@
   - [深浅拷贝](copy.md)
   - [事件循环机制](closure.md)
   - [原型和原型链](prototype.md)
-  - [闭包]
+  - [闭包](bibao.md)
   - [new操作符的作用是什么]
   - [this，call，apply，bind](thiscall.md)
   - [说说对this的理解]
