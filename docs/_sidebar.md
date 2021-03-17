@@ -20,9 +20,9 @@
   - [vue的路由导航钩子运用总结]
   - [vuex]
   - [谈谈虚拟DOM]
-  - [vue父子组件双向数据绑定的方法]
+  - [vue父子组件双向数据绑定的方法](vue7.md)
   - [vue实现一个换肤的功能]
-  - [vue中mixins使用场景]
+  - [vue中mixins使用场景](mixins.md)
 
 - HTTPS
   - [http协议](http.md)
