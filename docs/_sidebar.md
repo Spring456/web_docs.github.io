@@ -3,7 +3,7 @@
   - [事件循环机制](closure.md)
   - [原型和原型链](prototype.md)
   - [闭包](bibao.md)
-  - [new操作符的作用是什么]
+  - [new操作符的作用是什么](new.md)
   - [this，call，apply，bind](thiscall.md)
   - [说说对this的理解]
   - [前端跨域问题解决]
