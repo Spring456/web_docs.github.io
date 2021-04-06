@@ -1,4 +1,4 @@
-# docsify <small>3.5</small>
+# web前端知识
 
 [GitHub](https://github.com/docsifyjs/docsify/)
 [Get Started](#quick-start)
