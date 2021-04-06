@@ -50,7 +50,7 @@
 来看一个简单案例：
 
 (1)，我们想获取一个数值，在任何地方都可以访问到这个变量，则定义一个全局的变量。
-```
+```javascript
 <script type="text/javascript">
     var globalNum = 0;
     function add(){
@@ -62,7 +62,7 @@
 </script>
 ```
 定义了全局变量globalNum ，代码任何地方都可以访问到，体验不是很好，把变量放在函数内，定义成局部变量。
-```
+```javascript
 <script type="text/javascript">
     
     function add(){
@@ -75,7 +75,7 @@
 </script>
 ```
 定义成局部变量后，每一次执行都会初始化一下，执行的结果都是0，如果还希望是之前的结果，如何做呢？定义一个闭包函数即可。
-```
+```javascript
 <script type="text/javascript">
     
     function add(){
@@ -93,7 +93,7 @@
 </script>
 ```
 我们在add()函数内部，再定义一个count ()内嵌函数（闭包），内嵌函数count ()可以访问父函数的globalNum变量。现在我们只需要在外部访问count()函数，保证globalNum = 0只执行一次就可以了。
-```
+```javascript
 <script type="text/javascript">
     
     function add(){
@@ -114,7 +114,7 @@ globalNum变量受add()保护，只能通过函数count改变
 闭包函数有以下几个特点:
 
 ### 1、 外层函数的变量和运算之后，闭包函数才进行运行。
-```
+```javascript
 <script type="text/javascript">
     function fn(){
         var a=10;
@@ -134,7 +134,7 @@ globalNum变量受add()保护，只能通过函数count改变
 就像上面的变量a在函数内部,同时a也在闭包函数外面,但闭包函数中最后运行的值是所有变量以及其运算符变化之后的值.
 
 ### 3、闭包中使用的外层所有局部变量都会存起来用,如果有变量操作在闭包函数中,则不会保存在内存中,只要在调用时,会执行闭包函数的内部代码
-```
+```javascript
 <script type="text/javascript">
     function fn(){
         var a=10;
@@ -155,7 +155,7 @@ globalNum变量受add()保护，只能通过函数count改变
 ## 使用闭包需要注意的要点:
 1.当页面跳转的时候,信息一直保存在内存中,不会被释放,对电脑内存的消耗较大,所以不能滥用闭包.否则会影响网页打开速度,影响性能.在IE中变量从DOM节点获取,其属性又去引用一个函数,而内部函数又去引用外部的变量,这种互相引用,就会造成内存泄漏问题.解决办法如下:
 我们来解决一下IE的内存泄漏问题.
-```
+```javascript
 <script type="text/javascript">
     window.onload=function(){
         var oDiv=document.getElementById('div1')
@@ -171,7 +171,7 @@ globalNum变量受add()保护，只能通过函数count改变
 ```
 比如上面的例子,oDiv从DOM节点获取,然后点击oDiv触发div的id,这样就会造成内存泄漏,解决的办法就是在后面添加上
 window.onload=function(){oDiv.onclick=null}这段代码
-```
+```javascript
 <script type="text/javascript">
     window.onload=function(){
         var oDiv=document.getElementById('div1')
@@ -185,7 +185,7 @@ window.onload=function(){oDiv.onclick=null}这段代码
 </script>
 ```
 还有一种解决办法:将值存起来,然后在代码执行完毕后清除掉
-```
+```javascript
 <script type="text/javascript">
 window.onload=function(){
     var oDiv=document.getElementById('div1')
@@ -202,7 +202,7 @@ window.onload=function(){
 在实际项目中,我们通常在循环以及对象中使用闭包比较多,有时会造成一些问题.
 在循环中使用闭包函数
 先来看正常情况
-```
+```javascript
 <script type="text/javascript">
     var arr=[];
     for(var i=0;i<5;i++){
@@ -212,7 +212,7 @@ window.onload=function(){
 </script>
 ```
 正常情况无异议,再来看看循环有函数的情况
-```
+```javascript
 <script type="text/javascript">
     window.onload=function(){
         var oLi=document.getElementsByTagName('li')
@@ -227,7 +227,7 @@ window.onload=function(){
 比如上例,在HTML有3个li,按照上面的写法,会弹出3次3,也就是length的值.这是因为当我们调用函数的时候,循环内容已经运行完毕,最后的结果是3,如果我们想每次点击获取对应元素的下标,就需要用到闭包函数的解决方法,将值保存起来使用.
 
 上例我们有两种方法可以解决,第一种是利用匿名函数的自身调用.在事件外面套一个匿名函数,然后将i作为参数传进去.这是因为匿名函数的i的值已经保存在内存中,闭包函数调用的时候就使用这些值,不会弹出之前的3,而是依次弹出索引值
-```
+```javascript
 <script type="text/javascript">
     window.onload=function(){
         var oLi=document.getElementsByTagName('li')
@@ -243,7 +243,7 @@ window.onload=function(){
 </script>
 ```
 第二种方法是将点击事件的函数作为一个匿名函数,在函数内部用return返回一个函数,函数内再执行命令.这是因为点击事件时,将i的值保存在内部,然后再通过调用闭包函数就得到了已经在内存中保存的值.
-```
+```javascript
 <script type="text/javascript">
     window.onload=function(){
         var oLi=document.getElementsByTagName('li')
@@ -262,7 +262,7 @@ window.onload=function(){
 以上是闭包在循环中的运用.那么闭包在对象中又会产生什么问题呢?
 在对象中使用函数,经常会用到this关键字,这就存在this指向问题.
 ## 在对象中使用闭包
-```
+```javascript
 <script type="text/javascript">
     var name="lili";
     var obj={
@@ -287,7 +287,7 @@ window.onload=function(){
 ```
 从上面两个例子我们可以看出,在对象中,如果是闭包函数,那么它里面的this指向的是window.  如果我们想改变this指向问题,有下面这种方法
 我们在函数内部,将this用一个变量that存起来,然后再来访问这个变量.
-```
+```javascript
 <script type="text/javascript">
     var obj1={
         name:"lilei",
