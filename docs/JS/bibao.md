@@ -15,7 +15,7 @@
 
 2、让这些变量始终保存在内存中。
 先来看一个简单的例子：
-```
+```javascript
 <script type="text/javascript">
     function fn(){
         var a=1;
