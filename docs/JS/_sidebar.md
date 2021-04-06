@@ -13,7 +13,3 @@
   - [浏览器缓存机制]
   - [js的垃圾回收机制和内存泄漏操作](collection.md)
   - [JS的同步和异步]
-
-
-- HTTPS
-  - [http协议](http.md)
