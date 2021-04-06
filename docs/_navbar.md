@@ -2,7 +2,7 @@
 * HTML
 * CSS
 * JS
-    * [闭包](js/bibao.md)
+    * [闭包](JS/bibao.md)
 * VUE
 * webpack
 * React
