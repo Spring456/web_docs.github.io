@@ -1,5 +1,5 @@
 - JavaScript
-  - [深浅拷贝](copy.md)
+  - [深浅拷贝](js/copy.md)
   - [事件循环机制](closure.md)
   - [原型和原型链](prototype.md)
   - [闭包](bibao.md)
