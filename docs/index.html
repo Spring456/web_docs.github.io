@@ -15,20 +15,45 @@
       name: 'web前端',
       repo: 'https://github.com/Spring456/web_docs.github.io/tree/main/docs',
       coverpage: true,
-      onlyCover: false,
       loadNavbar: true,
       loadSidebar: true,
-      subMaxLevel: 2, 
-      alias: {
-        '/.*/_sidebar.md': '/_sidebar.md'
+      mergeNavbar: true,
+      formatUpdated: '{YYYY}-{MM}-{DD}',
+      plugins: [
+      function (hook, vm) {
+        hook.beforeEach(function (html) {
+          return html
+            + '<hr/>'
+            + '上次更新：{docsify-updated} '
+        })
+      },
+      function (hook, vm) {
+        hook.mounted(function() {
+          var div = Docsify.dom.create('div')
+          div.id = 'gitalk-container'
+          var main = Docsify.dom.getNode('#main')
+          div.style = `width: ${main.clientWidth}px; margin: 0 auto 20px;`
+          Docsify.dom.appendTo(Docsify.dom.find('.content'), div)
+        })
+
+        hook.doneEach(function() {
+          var el = document.getElementById('gitalk-container')
+          while(el.hasChildNodes()) el.removeChild(el.firstChild)
+          gitalk.render('gitalk-container')
+        })
       }
+    ]
     }
   </script>
   <!-- Docsify v4 -->
 
   
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+
 </body>
 </html>

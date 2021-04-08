@@ -1,8 +1,8 @@
 - JavaScript
-  - [深浅拷贝](copy.md)
-  - [事件循环机制](closure.md)
-  - [原型和原型链](prototype.md)
-  - [闭包](bibao.md)
+  - [深浅拷贝](JS/copy.md)
+  - [事件循环机制](JS/closure.md)
+  - [原型和原型链](JS/prototype.md)
+  - [闭包](JS/bibao.md)
   - [new操作符的作用是什么](new.md)
   - [this，call，apply，bind](thiscall.md)
   - [说说对this的理解](this.md)
