@@ -1,8 +1,8 @@
-- JavaScript
+- [JavaScript](FrontEnd/)
   - [深浅拷贝](FrontEnd/copy.md)
-  - [事件循环机制](JS/closure.md)
-  - [原型和原型链](JS/prototype.md)
-  - [闭包](JS/bibao.md)
+  - [事件循环机制](FrontEnd/closure.md)
+  - [原型和原型链](FrontEnd/prototype.md)
+  - [闭包](FrontEnd/bibao.md)
   - [new操作符的作用是什么](new.md)
   - [this，call，apply，bind](thiscall.md)
   - [说说对this的理解](this.md)
