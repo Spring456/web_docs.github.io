@@ -1,10 +1,11 @@
-在JS中，this的指向一直是个问题，理解this指向，始终坚持一个原理：**this 永远指向最后调用它的那个对象**。
-## 全局环境中调用
+在ES5中，this的指向一直是个问题，理解this指向，始终坚持一个原理：this 永远指向最后调用它的那个对象。这句话默读3遍以上。
+有以下几种场景：
+### 1、全局环境中调用
 在全局环境中，在任何函数外面，this指代全局对象，也就是window
 ```
 console.log(this===window)//true
 ```
-## 普通函数调用
+### 2、普通函数调用
 在普通函数中，this同样指代的是window
 ```
 <script>
@@ -26,9 +27,8 @@ console.log(this===window)//true
    fn()//10
 </script>
 ```
-看这两段代码，我们先默念一遍：**this 永远指向最后调用它的那个对象**。   
 同样的，这段代码在全局对象window下声明了一个name属性，在普通函数中调用也还是调用的window下的方法，因此这个this照样指向的是window
-## 对象中的this
+### 3、对象中的this
 ```
 <script>
     var obj={
@@ -70,9 +70,9 @@ console.log(this===window)//true
 结果是全局对象下的值，这是因为obj.fn方法赋值给newObj变量，此时newObj变量相当于window对象的一个属性，调用newObj方法相当于是window.newObj()，所以这个this指向的是window对象。
 this.name = window.name
 我们牢记：
->谁调用函数的属性或方法，this就指向这个调用的对象
-## 闭包中的this
-结论：**闭包中的this指向的是window**
+>>谁调用函数的属性或方法，this就指向这个调用的对象
+### 4、闭包中的this
+结论：闭包中的this指向的是window
 ```
 <script>
    var name = 'age'
@@ -126,7 +126,7 @@ var name = "windowsName";
     fn()
 ```
 上例中，fn()调用后，触发innerFunction()，这个函数前面也没有谁调用，所以依然是window调用的，所以打印全局的变量。
-## 改变this的指向
+### 5、改变this的指向
 改变this的指向，主要有以下几种情况：
 1. 使用ES6箭头函数
 2. 在函数内部使用_this=this
@@ -151,7 +151,7 @@ var name = "Windows";
 setTimeout/setInterval/匿名函数执行的时候，this默认指向window对象，除非手动改变this的指向。
 在《javascript高级程序设计》当中，写到：“超时调用的代码(setTimeout)都是在全局作用域中执行的，因此函数中的this的值，在非严格模式下是指向window对象，在严格模式下是指向undefined”。本文都是在非严格模式下的情况。
 因此上面的例子中，在全局window下，没有fn1()这个函数，因此报错。如何改写：
-### 使用箭头函数
+### 5.1、使用箭头函数
 es6里面this指向固定化，始终指向外部对象，因为箭头函数没有this,因此它自身不能进行new实例化,同时也不能使用call, apply, bind等方法来改变this的指向
 ```
 var a = {
@@ -168,7 +168,7 @@ var a = {
 a.fn2() // Hello word
 ```
 箭头函数的 this 始终指向函数定义时的 this，而非执行时。箭头函数需要记着这句话：“箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined”。
-### 使用_this=this
+#### 5.2、使用_this=this
 ```
 var a = {
   name : "Hello word",
@@ -185,7 +185,7 @@ var a = {
 a.fn2()            // Hello word
 ```
 这里的_this是调用函数fn2()的对象a，因此指向的也是对象a
-### 使用call() 和 apply()
+### 5.3、使用call() 和 apply()
 call() 和 apply() 是函数对象的方法，它的作用是改变函数的调用对象，它的第一个参数表示改变后的调用这个函数的对象，也就是要指向的对象。因此，this 指代的就是这两个方法的第一个参数;如果第一个参数为空，那就指向window。
 ```
 var x = 0;　　
@@ -217,7 +217,7 @@ var a = {
 };
 a.fn2()            // Hello word
 ```
-### 使用apply()
+#### 使用apply()
 ```
 var a = {
   name : "Hello word",
@@ -294,8 +294,8 @@ var a ={
 var b = a.fn;
 b.bind(a,1,2)()           // 3
 ```
-## this在实际工作中的注意事项
-### DOM 事件处理函数中的 this
+### 6、this在实际工作中的注意事项
+#### 6.1、DOM 事件处理函数中的 this
 一般来讲，当函数使用 addEventListener，被用作事件处理函数时，它的 this 指向触发事件的元素。如下代码所示：
 ```
 <!DOCTYPE HTML>
@@ -334,7 +334,7 @@ b.bind(a,1,2)()           // 3
 </body>
 </html>
 ```
-### 内联事件处理函数中的 this
+#### 6.2、内联事件处理函数中的 this
 当代码被内联处理函数调用时，它的 this 指向监听器所在的 DOM 元素。如下代码所示：
 ```
 <button onclick="alert(this.tagName.toLowerCase());">
@@ -348,3 +348,19 @@ b.bind(a,1,2)()           // 3
 </button>
 ```
 在这种情况下，this 被包含在匿名函数中，相当于处于全局上下文中，所以它指向 window 对象。
+#### 6.3、Eval函数
+该函数执行的时候，this绑定到当前作用域的对象上
+```
+var name="ABC";
+    var person={
+        name:"abc",
+        showName:function(){
+            eval("console.log(this.name)");
+        }
+    }
+    
+    person.showName();  //输出  "abc"
+    
+    var a=person.showName;
+    a();  //输出  "ABC"
+```

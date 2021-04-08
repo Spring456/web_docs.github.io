@@ -1,5 +1,15 @@
-[`[Basic]` 再谈Javascript作用域与闭包](FrontEnd/Basic/closure)
-
-[`[Basic]` JavaScript中的this与call&apply&bind](FrontEnd/Basic/this)
-
-[`[Basic]` JavaScript创建对象](FrontEnd/Basic/createObject)
+js知识总结
+- [深浅拷贝](FrontEnd/copy.md)
+  - [事件循环机制](JS/closure.md)
+  - [原型和原型链](JS/prototype.md)
+  - [闭包](JS/bibao.md)
+  - [new操作符的作用是什么](new.md)
+  - [this，call，apply，bind](thiscall.md)
+  - [说说对this的理解](this.md)
+  - [前端跨域问题解决]
+  - [promise和实现promise]
+  - [XSS，CSRF攻击过程，前端怎么去防止这类攻击]
+  - [前端的性能优化方法](optimize.md)
+  - [浏览器缓存机制]
+  - [js的垃圾回收机制和内存泄漏操作](collection.md)
+  - [JS的同步和异步]
