@@ -1,4 +1,5 @@
 - [首页](/)
-- [前端](/FrontEnd/)
-  - [JS知识](/FrontEnd/JS/)
-  - [vue知识](/FrontEnd/VUE/)
+- [前端技术](/FrontEnd/)
+  - [基础知识](/FrontEnd/Basic/)
+- [框架知识](/Component/)
+- [webpack知识](/webpack/)
