@@ -2,7 +2,7 @@
 ## HTML
 ## CSS
 ## JavaScript
-   ** [前端JS知识](JS/)**
+   **[前端JS知识](JS/)**
 ## VUE
 ## HTTP
 ## webpack
