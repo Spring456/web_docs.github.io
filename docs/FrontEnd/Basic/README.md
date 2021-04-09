@@ -1,1 +1,1 @@
-### JS基础问题
+### JavaScript基础

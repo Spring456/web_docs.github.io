@@ -2,7 +2,6 @@
 基本数据类型：number，string，boolean，null，undefined，symbol
 
 引用数据类型：统称为Object类型，细分的话，有：Object，Array，Date，Function等。
-
 ## 堆栈
 
 基本数据类型保存在栈内存，栈内存中分别存储着变量的标识符以及变量的值。
