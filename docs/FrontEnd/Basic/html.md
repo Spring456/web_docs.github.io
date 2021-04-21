@@ -14,11 +14,11 @@
 ### meta标签的name属性
 ![meta标签的name属性](../../_media/meta_name.png)
 ### meta标签的http-equiv属性
-![meta标签的name属性](../../_media/meta_http.png)
+![meta标签的http-equiv属性](../../_media/meta_http.png)
 ### link和@import
 ![link和@import](../../_media/link和@import.png)
-### 图片的title属性喝alt属性
-![图片的title属性喝alt属性](../../_media/title_alt.png)
+### 图片的title属性和alt属性
+![图片的title属性和alt属性](../../_media/title_alt.png)
 ### 行内标签和块级标签
 ![行内标签和块级标签](../../_media/inline_block.png)
 ### BFC
