@@ -23,3 +23,7 @@
 ![行内标签和块级标签](../../_media/inline_block.png)
 ### BFC
 ![BFC](../../_media/BFC.png)
+### a标签
+![a标签](../../_media/a标签.png)
+### img标签
+![img标签](../../_media/img.png)
