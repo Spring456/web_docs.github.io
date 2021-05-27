@@ -6,6 +6,10 @@
 
 [`[Basics HTML5]` HTML5知识图谱](FrontEnd/Basic/html5.md)
 
+[`[Basics JS]` JS基础](FrontEnd/Basic/js.md)
+
+[`[Basics JS]` JS数组方法总结](FrontEnd/Basic/arr.md)
+
 ### [前端进阶](/FrontEnd/Advanced/)
 [`[Basics JS]` 深浅拷贝](FrontEnd/Basic/copy.md)
 
