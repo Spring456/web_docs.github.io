@@ -7,7 +7,7 @@
 
 [`[Basics JS]` JS基础](FrontEnd/Basic/js.md)
 
-[`[Basics JS]` JS数组方法总结](FrontEnd/Basic/arr.md)
+[`[Basics JS]` JS数组方法总结](FrontEnd/Basic/arrr.md)
 
 [`[Basics JS]` JS创建对象的方法](FrontEnd/Basic/createObject.md)
 

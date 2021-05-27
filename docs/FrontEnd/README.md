@@ -8,7 +8,7 @@
 
 [`[Basics JS]` JS基础](FrontEnd/Basic/js.md)
 
-[`[Basics JS]` JS数组方法总结](FrontEnd/Basic/arr.md)
+[`[Basics JS]` JS数组方法总结](FrontEnd/Basic/arrr.md)
 
 ### [前端进阶](/FrontEnd/Advanced/)
 [`[Basics JS]` 深浅拷贝](FrontEnd/Basic/copy.md)
