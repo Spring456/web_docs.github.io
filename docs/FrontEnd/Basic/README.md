@@ -9,5 +9,7 @@
 
 [`[Basics JS]` JS数组方法总结](FrontEnd/Basic/arrr.md)
 
+[`[Basics JS]` window对象](FrontEnd/Basic/windows.md)
+
 [`[Basics JS]` JS创建对象的方法](FrontEnd/Basic/createObject.md)
 

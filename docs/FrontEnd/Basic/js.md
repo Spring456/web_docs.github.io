@@ -12,6 +12,9 @@
 ### JS数据类型之Boolean类型
 ![JS数据类型之Boolean类型](../../_media/js04.png)
 
+### JS数据类型之Object类型
+![JS数据类型之Object类型](../../_media/js08.png)
+
 ### JS数值转换
 ![JS数值转换](../../_media/js05.png)
 
@@ -20,3 +23,6 @@
 
 ### JS字符串方法总结
 ![JS字符串方法总结](../../_media/js07.png)
+
+### window对象
+![JS字符串方法总结](windows.md)
