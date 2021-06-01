@@ -12,24 +12,35 @@ webpack --config webpack.dev.config.js
 ### webpack核心参数介绍
 
 **1、entry打包入口文件**
+
 为了应付各种需求，官方给出三种方式来匹配不同需求。
+
 第一种: 输入简单string指定一个简单入口文件。所有依赖都在这个一个入口文件指定。
+
 第二种：是一个数组 ，webpack为了解决两个平行互相依赖的文件，却想打包到一起。
+
 第三种：是一个对象分key和value。多页面应用程序会运用这个场景。
 
 **2、output 打包出口**
+
 在 webpack 中配置 output 属性的最低要求是，将它的值设置为一个对象，包括以下两点：
+
 1、filename 用于输出文件的文件名。
+
 2、目标输出目录 path 的绝对路径。
 
 **3、mode模式**
+
 有两种，development和production
+
 **4、loader**
+
 对模块的源代码进行转换。通过指定Presets来告诉babel loader转换某一些特性，如果转换所有特性可以指定latest（es2015,2016,2017）怎么指定插件呢？给loader指定一个参数Query parameters
 
 1、require（'url-loader？'）//？后面跟参数
 
 2、配置文件中
+
 `loaders: [ { test: /\.js$/, loader:'babel', query:{ presets:['lastest'] //指定loader } } ]`
 
 3、还可以在项目根目录建 .babelrc 配置文件
@@ -76,6 +87,7 @@ path是Node的一个api，path对象上有一个方法resolv（解析），dirna
 其他常用的loader有，css-loader、style-loader、html-loader、url-loader等
 
 **5、plugins**
+
 由于插件可以携带参数/选项，你必须在 webpack 配置中，向 plugins 属性传入 new 实例。
 
 插件目的在于解决 loader 无法实现的其他事。
@@ -86,6 +98,7 @@ path是Node的一个api，path对象上有一个方法resolv（解析），dirna
 webpack官网提供了若干插件：https://webpack.js.org/plugins/
 
 **6、module**
+
 webapck中一切皆模块，webapck会从entry开始递归找到所有的依赖。在module.rules里进行loader的配置
 ```
 module: {
@@ -103,7 +116,9 @@ module: {
 }
 ```
 **7、devtool**
+
 用哪一种sourceMap来处理
+
 sourceMap的概念，简单理解，就是我们写的代码，在经过构建工具的处理后，如果在调试的时候出现什么错误，由于代码已经进行过了处理，若果不在处理前就标记好代码的各种信息，处理后无法定位问题，而sourceMap就是做标记的工作。比如说标记代码的行信息，列信息等等。用不同的模式下的souceMap，得到的代码信息不太一样
 ```
 devtool: config.build.productionSourceMap ? config.build.devtool : false,
@@ -122,6 +137,7 @@ resolve: {
 ```
 
 **9、performance**
+
 性能配置，里面的配置项能控制webpack如何通知资源和入口超过指定文件限制。
 ```
 performance: {
