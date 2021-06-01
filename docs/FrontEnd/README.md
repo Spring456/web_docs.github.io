@@ -12,6 +12,8 @@
 
 [`[Basics JS]` window对象](FrontEnd/Basic/windows.md)
 
+[`[Basics JS]` JS创建对象的方法](FrontEnd/Basic/createObject.md)
+
 ### [前端进阶](/FrontEnd/Advanced/)
 [`[Basics JS]` 深浅拷贝](FrontEnd/Basic/copy.md)
 

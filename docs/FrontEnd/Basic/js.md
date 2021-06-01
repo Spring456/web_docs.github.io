@@ -21,8 +21,12 @@
 ### JS的String类型转换
 ![JS的String类型转换](../../_media/js06.png)
 
+### JS的操作符
+![JS的操作符](../../_media/js09.png)
+
+### JS的Date类型
+![JS的Date类型](../../_media/js10.png)
 ### JS字符串方法总结
 ![JS字符串方法总结](../../_media/js07.png)
-
-### window对象
-![JS字符串方法总结](windows.md)
+### URL编码与解码
+![URL编码与解码](../../_media/js11.png)
