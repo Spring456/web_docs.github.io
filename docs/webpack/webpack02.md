@@ -52,10 +52,15 @@ babel:{
 4、还可以在package.json文件指定
 
 在配置文件中，module.loaders定义的参数解析
+
 ● test——js正则匹配 条件  
+
 ● exclude——loader排除范围，比如某一个目录下不让它处理  
+
 ● include——loader处理的范围  
+
 ● loader——单个loader使用字符串形式
+
 ● loaders——把一长串的loader通过一个数组表示
 
 ```
@@ -70,7 +75,9 @@ babel:{
 },
 ```
 还可以使用path来指定处理或不处理的文件。
-path是Node的一个api，path对象上有一个方法resolv（解析），dirname是运行环境下的变量，也就是在当前运行环境的路径，后面是相对路径。
+
+path是Node的一个模块，用来表示路径相关操作，path对象上有一个方法resolv（解析），dirname是运行环境下的变量，也就是在当前运行环境的路径，后面是相对路径。
+
 （dirname）当前的目录，再加个一个相对路径（api/src），解析完后得到一个绝对路径
 
 ```
