@@ -20,26 +20,25 @@ webpack提供对应的api接口，需要处理哪方面的文件按照规范操�
 
 ### webpack的核心概念
 
-**1、Entry**
+`**1、Entry**`
 
 入口(Entry)表示Webpack以哪个文件作为入口起点分析构建内部依赖图并进行打包。
 
-**2、Output**
+`**2、Output**`
 
 输出(Output)表示Webpack打包后的资源bundles输出到哪里去，以及如何命名。
 
-**3、Loader**
+`**3、Loader**`
 
 Loader——文件转换器，将webpack不能处理的模块转换为webpack能处理的模块，就是js模块。还可以处理html，css等模块
 
-**4、Plugins**
+`**4、Plugins**`
 
 插件(Plugins)可以用于执行范围更广的任务，插件的范围包括从打包和压缩，一直到重新定义环境中的变量等。
 
-**5、Mode**
+`**5、module**`
 
-模式(Mode)指示Webpack使用相应模式的配置。分为development和production两种模式，下面分别进行简述。
-
+配置处理模块的规则，项目里面的一切都是模块，一个文件就是一个模块
 ### 两种模式
 
 **development: 开发模式**
@@ -53,21 +52,25 @@ Loader——文件转换器，将webpack不能处理的模块转换为webpack能
 
 ### webpack其他配置型介绍
 
-**1、context**
+`**1、context**`
 
 context 是webpack entry的上下文，是入口文件所处的目录的绝对路径。默认情况下，是当前项目根目录
 
-**2、module**
+`**2、Mode**`
 
-模块，在 webpack 中，一切皆为模块，一个模块对应一个文件
+模式(Mode)指示Webpack使用相应模式的配置。分为development和production两种模式，下面分别进行简述。
 
-**3、Chunk**
+`**3、Chunk**`
 
 代码块，一个 chunk 由多个模块组合而成，用于代码的合并与分割。是进行依赖分析的时候，代码分割出来的代码块，包括一个或多个module，是被分组了的module集合，code spliting之后的就是chunk
 
-**4、bundle**
+`**4、bundle**`
 
 是文件，最终打包出来的文件，通常一个bundle对应一个chunk
+
+`**5、resolve**`
+
+配置寻找模块的规则
 
 ### webpack核心对象
 

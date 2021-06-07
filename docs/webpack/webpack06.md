@@ -1,10 +1,10 @@
 ## webpack打包过后文件依然很大怎么办？
 
-1、去除不必要的插件
+`1、去除不必要的插件`
 
 可以去除为了方便开发而下载的插件，比如HotModuleReplacementPlugin、NoErrorsPlugin
 
-2、配置全局变量
+`2、配置全局变量`
 
 告诉 webpack 我要发布 production 了,按照 production 方式去打包
 
@@ -17,7 +17,7 @@
     })
 ```
 
-3、设置devtool 中的 source-map。
+`3、设置devtool 中的 source-map。`
 
 在production环境打包的时候关闭 devtool.
 
@@ -28,7 +28,7 @@ devtool: "#source-map",
 这样只会在文件后面跟一个 url,这样对源文件影响就很小了
 
 
-3、使 css 剥离 js 文件, 将 css 单独打包。
+`4、使 css 剥离 js 文件, 将 css 单独打包。`
 
 依赖插件 npm install --save-dev extract-text-webpack-plugin 先安装再使用
 
@@ -41,7 +41,7 @@ devtool: "#source-map",
 把 css 单独打包出来，免得以后只修改 css 导致 浏览器端 js 的缓存也失效了。
 这里使用了 contenthash, webpack 会按照内容去生成 hash 值。
 
-4、压缩, 去除注释
+`5、压缩, 去除注释`
 
 ```
     //在 plugins 中添加
@@ -53,7 +53,7 @@ devtool: "#source-map",
     })
 ```
 
-5、开启 gzip 压缩
+`6、开启 gzip 压缩`
 
 依赖插件 npm install --save-dev compression-webpack-plugin
 
@@ -121,7 +121,7 @@ npm install --save-dev compression-webpack-plugin@1.1.12
 使用gzip打包后，服务器也要相应的配置gzip，
 
 
-6、压缩 html, 自动添加上面生成的静态资源。
+`7、压缩 html, 自动添加上面生成的静态资源。`
 
 依赖插件 npm install --save-dev html-webpack-plugin
 

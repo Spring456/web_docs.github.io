@@ -17,3 +17,5 @@
 
 [`[Advanced JS]` 闭包](FrontEnd/Advanced/bibao.md)
 
+[`[Advanced JS]` 详解promise](FrontEnd/Advanced/promise.md)
+
