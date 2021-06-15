@@ -13,3 +13,5 @@
 
 [`[Basics JS]` JS创建对象的方法](FrontEnd/Basic/createObject.md)
 
+[`[Basics JS]` JS小知识](FrontEnd/Basic/knowtips.md)
+

@@ -1,4 +1,8 @@
 ### JavaScript进阶问题
+[`[Advanced JS]` 详解JS变量提升和函数提升](FrontEnd/Advanced/varib.md)
+
+[`[Advanced JS]` 理解JS中的执行环境和作用域](FrontEnd/Advanced/actionScope.md)
+
 [`[Basics JS]` 深浅拷贝](FrontEnd/Basic/copy.md)
 
 [`[Basics JS]` new操作符的作用是什么](FrontEnd/Advanced/new.md)
@@ -17,5 +21,13 @@
 
 [`[Advanced JS]` 闭包](FrontEnd/Advanced/bibao.md)
 
-[`[Advanced JS]` 详解promise](FrontEnd/Advanced/promise.md)
+[`[Advanced JS]` 理解JS中的面向对象编程(1)](FrontEnd/Advanced/objfront.md)
+
+[`[Advanced JS]` 理解JS中的面向对象编程(2)——封装](FrontEnd/Advanced/objfront.md)
+
+[`[Advanced JS]` 理解JS中的面向对象编程(3)——继承](FrontEnd/Advanced/objfront.md)
+
+[`[Advanced JS]` 理解JS中的面向对象编程(2)——封装](FrontEnd/Advanced/objfront.md)
+
+[`[Advanced JS]` 理解JS中的面向对象编程(3)——继承](FrontEnd/Advanced/objfront.md)
 
