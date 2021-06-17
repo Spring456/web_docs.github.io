@@ -27,7 +27,5 @@
 
 [`[Advanced JS]` 理解JS中的面向对象编程(3)——继承](FrontEnd/Advanced/objfront.md)
 
-[`[Advanced JS]` 理解JS中的面向对象编程(2)——封装](FrontEnd/Advanced/objfront.md)
-
-[`[Advanced JS]` 理解JS中的面向对象编程(3)——继承](FrontEnd/Advanced/objfront.md)
+[`[Advanced JS]` 简单聊聊前端架构](FrontEnd/Advanced/jiagou.md)
 
