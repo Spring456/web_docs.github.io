@@ -15,3 +15,5 @@
 
 [`[Basics JS]` JS小知识](FrontEnd/Basic/knowtips.md)
 
+[`[Basics JS]` history.pushState()和 history.replaceState()方法](FrontEnd/Basic/pushState.md)
+
