@@ -31,3 +31,7 @@
 
 [`[Advanced JS]` 数组的高级方法运用](FrontEnd/Advanced/arrgao.md)
 
+[`[Advanced JS]` js的防抖节流及应用场景](FrontEnd/Advanced/debounce.md)
+
+[`[Advanced JS]` 详解promise](FrontEnd/Advanced/promise.md)
+

@@ -242,7 +242,7 @@ p.then(null, function (s){
 
 ### 4、promise的参数，运行等的理解
 
-1、promise是同步任务，但promise的回调函数（then()方法里）是异步任务，而且是微任务
+**1、promise是同步任务，但promise的回调函数（then()方法里）是异步任务，而且是微任务**
 
 详细请看事件循环机制：[事件循环机制](FrontEnd/Advanced/closure.md)
 
@@ -268,7 +268,7 @@ console.log(6);
 ```
 执行顺序：1 3 4 6 5 2 ,先执行同步任务，再执行异步任务，先执行异步任务里面的微任务，最后执行异步任务里的宏任务。
 
-2、then 和 catch 期望接收函数做参数，如果非函数就会发生 Promise 穿透现象，打印的是上一个 Promise 的返回。
+**2、then 和 catch 期望接收函数做参数，如果非函数就会发生 Promise 穿透现象，打印的是上一个 Promise 的返回。**
 
 ```
 var promise = new Promise(function(resolve, reject){
@@ -282,7 +282,7 @@ promise.then(2).then((n) => {
 });
 ```
 
-3、then()返回的回调函数会作为下一个then()事件的形参
+**3、then()返回的回调函数会作为下一个then()事件的形参**
 
 ```
 var promise = new Promise(function(resolve, reject){
@@ -298,7 +298,7 @@ promise.then(() => {
 });
 ```
 
-4、Promise.resolve()返回的是新的promise对象，然后执行异步事件
+**4、Promise.resolve()返回的是新的promise对象，然后执行异步事件**
 
 ```
 var promise = new Promise(function(resolve, reject){
@@ -314,7 +314,7 @@ promise.then(() => {
 });
 ```
 
-5、promise里嵌套promise，需等待里面的promise全部执行完毕且resolve()或reject()完毕之后才执行
+**5、promise里嵌套promise，需等待里面的promise全部执行完毕且resolve()或reject()完毕之后才执行**
 
 ```
 let a;
@@ -333,7 +333,7 @@ a = new Promise(async (resolve, reject) => {
 <!-- 结果为promise1、undefined、promise2、12 -->
 ```
 
-6、Promise 对象的状态只能被转移一次，只能从pending赚为fullfiled或rejected,不可逆
+**6、Promise 对象的状态只能被转移一次，只能从pending赚为fullfiled或rejected,不可逆**
 
 ```
 const promise = new Promise((resolve, reject) => {
@@ -351,6 +351,6 @@ promise
   });
 ```
 
-7、promise的缺陷在于不能取消，只能等resolve或reject执行或抛错。
+**7、promise的缺陷在于不能取消，只能等resolve或reject执行或抛错。**
 
 
