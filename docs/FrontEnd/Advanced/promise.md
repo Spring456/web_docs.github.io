@@ -2,7 +2,7 @@
 
 ### 1、什么是promise
 
->>Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一
+>Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一
 
 ### 2、promise解决了什么问题
 

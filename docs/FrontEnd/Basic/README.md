@@ -17,3 +17,5 @@
 
 [`[Basics JS]` history.pushState()和 history.replaceState()方法](FrontEnd/Basic/pushState.md)
 
+[`[Basics JS]` js事件冒泡和事件捕获](FrontEnd/Basic/event.md)
+

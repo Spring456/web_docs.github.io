@@ -18,6 +18,10 @@
 
 [`[Basics JS]` history.pushState()和 history.replaceState()方法](FrontEnd/Basic/pushState.md)
 
+[`[Basics JS]` js事件冒泡和事件捕获](FrontEnd/Basic/event.md)
+
+[`[Basics JS]` JS中小数运算问题及解决](FrontEnd/Basic/decimal.md)
+
 ### [前端进阶](/FrontEnd/Advanced/)
 
 [`[Advanced JS]` 详解JS变量提升和函数提升](FrontEnd/Advanced/varib.md)
@@ -50,7 +54,7 @@
 
 [`[Advanced JS]` 简单聊聊前端架构](FrontEnd/Advanced/jiagou.md)
 
-[`[Advanced JS]` 数组的高级方法运用](FrontEnd/Advanced/arrgao.md)
+[`[Advanced JS]` 数组的高级方法运用map(),reduce()](FrontEnd/Advanced/arrgao.md)
 
 [`[Advanced JS]` js的防抖节流及应用场景](FrontEnd/Advanced/debounce.md)
 
